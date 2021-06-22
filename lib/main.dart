@@ -46,6 +46,7 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF5C0B68),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -65,14 +66,14 @@ class MyPage extends StatelessWidget {
               Text(
                 "Your Mobile",
                 style: TextStyle(
-                    foreground: Paint()..shader = linearGradient2,
+                    color: Color(0xFFFFD119),
                     fontSize: 35,
                     fontWeight: FontWeight.bold),
               ),
               Text(
                 "Car Assistance",
                 style: TextStyle(
-                    foreground: Paint()..shader = linearGradient1,
+                    color: Color(0xFFFFD119),
                     fontSize: 35,
                     fontWeight: FontWeight.bold),
               ),
@@ -88,7 +89,7 @@ class MyPage extends StatelessWidget {
                   Text(
                     "WE'LL BE THERE FOR YOU",
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.grey[100],
                         fontSize: 15,
                         fontWeight: FontWeight.bold),
                   ),
@@ -102,10 +103,7 @@ class MyPage extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(23.0),
-                  gradient: LinearGradient(colors: [
-                    Color(0xFFFF1000),
-                    Color(0xFF2508FF),
-                  ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+                  color: Color(0xFFFFD119)
                 ),
                 height: 50,
                 width: MediaQuery.of(context).size.width,
@@ -121,7 +119,7 @@ class MyPage extends StatelessWidget {
                   child: Text(
                     "Get Started",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Color(0xFF5C0B68),
                         fontSize: 22,
                         fontWeight: FontWeight.bold),
                   ),

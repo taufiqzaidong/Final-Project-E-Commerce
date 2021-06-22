@@ -1,8 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gowallpaper/screens/Service.dart';
 import 'package:gowallpaper/screens/home.dart';
 import 'package:gowallpaper/screens/towing.dart';
-import 'package:gradient_text/gradient_text.dart';
 //import 'package:youtube/Service.dart';
 //import 'package:youtube/info.dart';
 
@@ -11,7 +12,19 @@ class SelectPage extends StatefulWidget {
   _SelectPageState createState() => _SelectPageState();
 }
 
+
+
 class _SelectPageState extends State<SelectPage> {
+  final usersRef = FirebaseFirestore.instance.collection('Users');
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  String uid = '';
+  @override
+  void initState() {
+    final User user = auth.currentUser;
+    uid = user.uid;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,10 +36,25 @@ class _SelectPageState extends State<SelectPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Text("Choose your option to continue",
-                
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Color(0xFFFFD119)),
-                textAlign: TextAlign.center),
+            FutureBuilder<DocumentSnapshot>(
+              future: usersRef.doc(uid).get(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<DocumentSnapshot> snapshot) {
+                if (snapshot.hasError) {
+                  return Text("Something went wrong");
+                }
+
+                if (snapshot.connectionState == ConnectionState.done) {
+                  Map<String, dynamic> data = snapshot.data.data();
+                  return Text('Hi '+data['displayName'].toString()+', \nChoose your option to continue',
+                       style: TextStyle(fontFamily: 'Bebas',fontSize: 30, fontWeight: FontWeight.bold,color: Color(0xFFFFD119)),
+                textAlign: TextAlign.center);
+                }
+
+                return Text("loading");
+              },
+            ),
+            SizedBox(height: 20),
             Image.asset(
               "assets/carservice.gif",
               fit: BoxFit.cover,
