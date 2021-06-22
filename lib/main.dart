@@ -102,15 +102,15 @@ class MyPage extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(23.0),
-                  color: Color(0xFFFFD119)
-                ),
+                    borderRadius: BorderRadius.circular(23.0),
+                    color: Color(0xFFFFD119)),
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: RaisedButton(
                   elevation: 0,
                   onPressed: () {
-                    Navigator.pushReplacement(context, 
+                    Navigator.pushReplacement(
+                      context,
                       //MaterialPageRoute(builder: (context) => SelectPage()),
                       MaterialPageRoute(builder: (context) => StreamStart()),
                     );
@@ -132,7 +132,6 @@ class MyPage extends StatelessWidget {
     );
   }
 }
-
 
 final Shader linearGradient1 = LinearGradient(
   colors: <Color>[Color(0xFFFF1000), Color(0xFF2508FF)],
