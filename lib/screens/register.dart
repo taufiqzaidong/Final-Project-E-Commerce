@@ -29,12 +29,12 @@ class _RegisterState extends State<Register> {
         ? Loading()
         : Scaffold(
             resizeToAvoidBottomInset: true,
+            backgroundColor: Color(0xFF5C0B68),
             body: Container(
                 height: double.infinity,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/bg_auth.jpg'),
-                        fit: BoxFit.cover)),
+                        image: AssetImage(''), fit: BoxFit.cover)),
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
                 child: Form(
                   key: _formKey,
@@ -47,7 +47,7 @@ class _RegisterState extends State<Register> {
                             TextSpan(
                                 text: "CAR",
                                 style: TextStyle(
-                                    color: Colors.purple[400],
+                                    color: Color(0xffFFD119),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 50,
                                     fontFamily: 'Bebas')),
@@ -55,6 +55,7 @@ class _RegisterState extends State<Register> {
                                 text: "OSAK",
                                 style: TextStyle(
                                     color: Colors.white,
+                                    fontWeight: FontWeight.bold,
                                     fontSize: 50,
                                     fontFamily: 'Bebas')),
                           ]),
@@ -145,7 +146,7 @@ class _RegisterState extends State<Register> {
             Text(
               'Log In',
               style: TextStyle(
-                  fontSize: 13, fontFamily: 'Bebas', color: Colors.purple[400]),
+                  fontSize: 13, fontFamily: 'Bebas', color: Color(0xffFFD119)),
             ),
           ],
         ),

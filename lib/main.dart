@@ -112,8 +112,7 @@ class MyPage extends StatelessWidget {
                 child: RaisedButton(
                   elevation: 0,
                   onPressed: () {
-                    Navigator.push(
-                      context,
+                    Navigator.pushReplacement(context, 
                       //MaterialPageRoute(builder: (context) => SelectPage()),
                       MaterialPageRoute(builder: (context) => StreamStart()),
                     );
