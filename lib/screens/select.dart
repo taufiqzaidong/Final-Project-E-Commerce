@@ -34,9 +34,11 @@ class _SelectPageState extends State<SelectPage> {
         elevation: 0,
         actions: [
           TextButton.icon(
-            icon: Icon(Icons.person,color:  Color(0xFF5C0B68)),
-            
-            label: Text('Logout',style: TextStyle(color: Color(0xFF5C0B68)),),
+            icon: Icon(Icons.person, color: Color(0xFF5C0B68)),
+            label: Text(
+              'Logout',
+              style: TextStyle(color: Color(0xFF5C0B68)),
+            ),
             onPressed: () async {
               await _auth.signOut();
             },
@@ -46,6 +48,24 @@ class _SelectPageState extends State<SelectPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            RichText(
+              text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                    text: "CAR",
+                    style: TextStyle(
+                        color: Color(0xffFFD119),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50,
+                        fontFamily: 'Bebas')),
+                TextSpan(
+                    text: "OSAK",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50,
+                        fontFamily: 'Bebas')),
+              ]),
+            ),
             SizedBox(height: 30),
             FutureBuilder<DocumentSnapshot>(
               future: usersRef.doc(uid).get(),
