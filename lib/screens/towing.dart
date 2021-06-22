@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gowallpaper/screens/home.dart';
-import 'package:gowallpaper/screens/Service.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
