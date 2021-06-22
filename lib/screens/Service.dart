@@ -38,13 +38,33 @@ final List<String> servicesright = [
 ];
 final List<String> servicesnameleft = [
   "Pusat Servis Kereta Kesuma",
-  "Pakar Servis Kenderaan Rahim Auto",
+  "Pakar Servis Rahim Auto",
   "G AutoTech Servis Kereta",
 ];
 final List<String> servicesnameright = [
   "Pusat Servis Kenderaan Syntium",
   "GM Auto Garage",
   "Azam Maju Services",
+];
+final List<String> locationright = [
+  "Sri Serdang, Selangor",
+  "Putrajaya",
+  "Bangi, Selangor",
+];
+final List<String> distanceright = [
+  "2.5 km away",
+  "12.0 km away",
+  "15.7 km away",
+];
+final List<String> locationleft = [
+  "Serdang, Selangor",
+  "Seri Kembangan, Selangor",
+  "Puchong, Selangor",
+];
+final List<String> distanceleft = [
+  "3.0 km away",
+  "5.7 km away",
+  "16.0 km away",
 ];
 int imagesrcindex = 0;
 
@@ -251,27 +271,56 @@ class _ServicePageState extends State<ServicePage> {
                                           height: 130,
                                           decoration: BoxDecoration(
                                               image: DecorationImage(
-                                            image:
-                                                AssetImage(servicesleft[index]),
+                                            image: AssetImage(
+                                                servicesleft[index]),
                                             fit: BoxFit.fill,
                                             alignment: Alignment.topCenter,
                                           )),
                                           child: Text('')),
                                       Container(
-                                        width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width -
-                                                  41) /
-                                              2,
-                                          height: 62,
-                                        child: Flexible(
-                                          child: Text(
-                                            servicesnameleft[index],
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold),
-                                          ),
+                                        width:
+                                            (MediaQuery.of(context).size.width -
+                                                    41) /
+                                                2,
+                                        height: 92,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Center(
+                                              child: Text(
+                                                servicesnameleft[index],
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            SizedBox(height: 10),
+                                            Center(
+                                              child: Text(
+                                                locationleft[index],
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(height: 5),
+                                            Center(
+                                              child: Text(
+                                                distanceleft[index],
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 12,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       )
                                     ],
@@ -301,27 +350,56 @@ class _ServicePageState extends State<ServicePage> {
                                           height: 130,
                                           decoration: BoxDecoration(
                                               image: DecorationImage(
-                                            image:
-                                                AssetImage(servicesright[index]),
+                                            image: AssetImage(
+                                                servicesright[index]),
                                             fit: BoxFit.fill,
                                             alignment: Alignment.topCenter,
                                           )),
                                           child: Text('')),
                                       Container(
-                                        width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width -
-                                                  41) /
-                                              2,
-                                          height: 62,
-                                        child: Flexible(
-                                          child: Text(
-                                            servicesnameright[index],
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.bold),
-                                          ),
+                                        width:
+                                            (MediaQuery.of(context).size.width -
+                                                    41) /
+                                                2,
+                                        height: 92,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: <Widget>[
+                                            Center(
+                                              child: Text(
+                                                servicesnameright[index],
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            SizedBox(height: 10),
+                                            Center(
+                                              child: Text(
+                                                locationright[index],
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                            SizedBox(height: 5),
+                                            Center(
+                                              child: Text(
+                                                distanceright[index],
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 12,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       )
                                     ],
