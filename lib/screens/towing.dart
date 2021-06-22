@@ -49,7 +49,6 @@ class _TowingState extends State<Towing> {
             SizedBox(
               height: MediaQuery.of(context).size.height / 100,
             ),
-            
             ButtonTheme(
               minWidth: MediaQuery.of(context).size.width / 1.1,
               height: MediaQuery.of(context).size.height / 13,
@@ -101,3 +100,16 @@ class _TowingState extends State<Towing> {
     }
   }
 }
+
+
+ //body: Column(
+ //           mainAxisAlignment: MainAxisAlignment.center,
+   //         crossAxisAlignment: CrossAxisAlignment.center,
+     //       children: <Widget>[
+       //       if (_currentPosition != null)
+       //       Text(
+       //       _currentAddress,
+        //     style: TextStyle(
+        //       color: Colors.white, fontSize: 50, fontFamily: 'Bebas'),
+         // textAlign: TextAlign.center,
+         // ),
