@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gowallpaper/screens/Service.dart';
 import 'package:gowallpaper/screens/home.dart';
 import 'package:gowallpaper/screens/towing.dart';
+import 'package:gowallpaper/services/auth.dart';
 //import 'package:youtube/Service.dart';
 //import 'package:youtube/info.dart';
 
@@ -11,8 +12,6 @@ class SelectPage extends StatefulWidget {
   @override
   _SelectPageState createState() => _SelectPageState();
 }
-
-
 
 class _SelectPageState extends State<SelectPage> {
   final usersRef = FirebaseFirestore.instance.collection('Users');
@@ -27,15 +26,27 @@ class _SelectPageState extends State<SelectPage> {
 
   @override
   Widget build(BuildContext context) {
+    final AuthService _auth = AuthService();
     return Scaffold(
-      backgroundColor: Color(0xFF5C0B68),
+      backgroundColor: Color(0xFFCBC3E3),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        actions: [
+          TextButton.icon(
+            icon: Icon(Icons.person,color:  Color(0xFF5C0B68)),
+            
+            label: Text('Logout',style: TextStyle(color: Color(0xFF5C0B68)),),
+            onPressed: () async {
+              await _auth.signOut();
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            SizedBox(height: 30),
             FutureBuilder<DocumentSnapshot>(
               future: usersRef.doc(uid).get(),
               builder: (BuildContext context,
@@ -46,9 +57,16 @@ class _SelectPageState extends State<SelectPage> {
 
                 if (snapshot.connectionState == ConnectionState.done) {
                   Map<String, dynamic> data = snapshot.data.data();
-                  return Text('Hi '+data['displayName'].toString()+', \nChoose your option to continue',
-                       style: TextStyle(fontFamily: 'Bebas',fontSize: 30, fontWeight: FontWeight.bold,color: Color(0xFFFFD119)),
-                textAlign: TextAlign.center);
+                  return Text(
+                      'Hi ' +
+                          data['displayName'].toString() +
+                          ', \nChoose your option to continue',
+                      style: TextStyle(
+                          fontFamily: 'Bebas',
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF5C0B68)),
+                      textAlign: TextAlign.center);
                 }
 
                 return Text("loading");
@@ -71,10 +89,8 @@ class _SelectPageState extends State<SelectPage> {
                   children: <Widget>[
                     GestureDetector(
                       onTap: () {
-                       Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Home()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Home()));
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -97,7 +113,6 @@ class _SelectPageState extends State<SelectPage> {
                             Text(
                               "Assistance",
                               style: TextStyle(
-                      
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.pink[700],
@@ -154,10 +169,8 @@ class _SelectPageState extends State<SelectPage> {
                   children: <Widget>[
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Towing()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Towing()));
                       },
                       child: Container(
                         decoration: BoxDecoration(
