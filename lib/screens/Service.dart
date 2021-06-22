@@ -52,16 +52,14 @@ class _ServicePageState extends State<ServicePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFCBC3E3),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF5C0B68),
         elevation: 0,
         centerTitle: true,
-        title: GradientText("SERVICES",
-            gradient: LinearGradient(colors: [
-              Color(0xFFFF1000),
-              Color(0xFF2508FF),
-            ]),
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+        title: Text("SERVICES",
+            
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Color(0xFFFFD119)),
             textAlign: TextAlign.center),
       ),
       body: Padding(
@@ -72,15 +70,7 @@ class _ServicePageState extends State<ServicePage> {
             Container(
               child: Column(
                 children: <Widget>[
-                  Container(
-                    height: 2.5,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: <Color>[
-                        Color(0xFF2508FF),
-                        Color(0xFFFF1000)
-                      ]),
-                    ),
-                  ),
+              
                   SizedBox(
                     height: 10,
                   ),

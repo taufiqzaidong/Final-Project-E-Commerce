@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gowallpaper/screens/Service.dart';
 import 'package:gowallpaper/screens/home.dart';
+import 'package:gowallpaper/screens/towing.dart';
 import 'package:gradient_text/gradient_text.dart';
 //import 'package:youtube/Service.dart';
 //import 'package:youtube/info.dart';
@@ -14,6 +15,7 @@ class _SelectPageState extends State<SelectPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF5C0B68),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -21,12 +23,9 @@ class _SelectPageState extends State<SelectPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            GradientText("Choose your option to continue",
-                gradient: LinearGradient(colors: [
-                  Color(0xFFFF1000),
-                  Color(0xFF2508FF),
-                ]),
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            Text("Choose your option to continue",
+                
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Color(0xFFFFD119)),
                 textAlign: TextAlign.center),
             Image.asset(
               "assets/carservice.gif",
@@ -127,10 +126,10 @@ class _SelectPageState extends State<SelectPage> {
                   children: <Widget>[
                     GestureDetector(
                       onTap: () {
-                        /*Navigator.push(
+                        Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ServicePage()));*/
+                                builder: (context) => Towing()));
                       },
                       child: Container(
                         decoration: BoxDecoration(
