@@ -27,24 +27,24 @@ final List<String> offercodes = [
   " Code: GHI789 ",
 ];
 final List<String> servicesleft = [
-  "assets/wheel.jpg",
-  "assets/caroil.jpg",
-  "assets/mirrorservice.jpg",
+  "assets/workshop2.jpg",
+  "assets/workshop1.jpg",
+  "assets/workshop3.jpg",
 ];
 final List<String> servicesright = [
-  "assets/engineservice.png",
-  "assets/gasservice.jpg",
-  "assets/brakeservice.jpg",
+  "assets/workshop4.jpg",
+  "assets/workshop5.jpg",
+  "assets/workshop6.jpg",
 ];
 final List<String> servicesnameleft = [
-  "Wheel Service",
-  "Oil Service",
-  "Mirror Service",
+  "Pusat Servis Kereta Kesuma",
+  "Pakar Servis Kenderaan Rahim Auto",
+  "G AutoTech Servis Kereta",
 ];
 final List<String> servicesnameright = [
-  "Engine Service",
-  "Gas Service",
-  "Brake Service",
+  "Pusat Servis Kenderaan Syntium",
+  "GM Auto Garage",
+  "Azam Maju Services",
 ];
 int imagesrcindex = 0;
 
@@ -58,8 +58,10 @@ class _ServicePageState extends State<ServicePage> {
         elevation: 0,
         centerTitle: true,
         title: Text("SERVICES",
-            
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,color: Color(0xFFFFD119)),
+            style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFFFD119)),
             textAlign: TextAlign.center),
       ),
       body: Padding(
@@ -70,7 +72,6 @@ class _ServicePageState extends State<ServicePage> {
             Container(
               child: Column(
                 children: <Widget>[
-              
                   SizedBox(
                     height: 10,
                   ),
@@ -192,7 +193,7 @@ class _ServicePageState extends State<ServicePage> {
                         ),
                       ),
                       SizedBox(height: 50),
-                      GradientText("All Services  ",
+                      GradientText("Nearby Workshop  ",
                           gradient: LinearGradient(colors: [
                             Color(0xFFFF1000),
                             Color(0xFF2508FF),
@@ -222,7 +223,7 @@ class _ServicePageState extends State<ServicePage> {
 
             SingleChildScrollView(
               child: Container(
-                height: MediaQuery.of(context).size.height / 2.8,
+                height: MediaQuery.of(context).size.height / 2,
                 child: Expanded(
                   child: ListView.builder(
                     itemCount: servicesleft.length,
@@ -231,35 +232,49 @@ class _ServicePageState extends State<ServicePage> {
                         children: <Widget>[
                           Container(
                             width: (MediaQuery.of(context).size.width - 25) / 2,
-                            height: 100,
+                            height: 230,
                             color: Colors.transparent,
                             child: Card(
                               elevation: 5,
                               child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  ClipOval(
-                                    child: Container(
-                                      child: Image.asset(
-                                        servicesleft[index],
-                                        fit: BoxFit.fill,
-                                        width: 55,
-                                        height: 55,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Flexible(
-                                    child: Text(
-                                      servicesnameleft[index],
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                                  Column(
+                                    children: <Widget>[
+                                      Container(
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  41) /
+                                              2,
+                                          height: 130,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                            image:
+                                                AssetImage(servicesleft[index]),
+                                            fit: BoxFit.fill,
+                                            alignment: Alignment.topCenter,
+                                          )),
+                                          child: Text('')),
+                                      Container(
+                                        width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  41) /
+                                              2,
+                                          height: 62,
+                                        child: Flexible(
+                                          child: Text(
+                                            servicesnameleft[index],
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 ],
                               ),
@@ -267,35 +282,49 @@ class _ServicePageState extends State<ServicePage> {
                           ),
                           Container(
                             width: (MediaQuery.of(context).size.width - 25) / 2,
-                            height: 100,
+                            height: 230,
                             color: Colors.transparent,
                             child: Card(
                               elevation: 5,
                               child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  ClipOval(
-                                    child: Container(
-                                      child: Image.asset(
-                                        servicesright[index],
-                                        fit: BoxFit.fill,
-                                        width: 55,
-                                        height: 55,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Flexible(
-                                    child: Text(
-                                      servicesnameright[index],
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                                  Column(
+                                    children: <Widget>[
+                                      Container(
+                                          width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  41) /
+                                              2,
+                                          height: 130,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                            image:
+                                                AssetImage(servicesright[index]),
+                                            fit: BoxFit.fill,
+                                            alignment: Alignment.topCenter,
+                                          )),
+                                          child: Text('')),
+                                      Container(
+                                        width: (MediaQuery.of(context)
+                                                      .size
+                                                      .width -
+                                                  41) /
+                                              2,
+                                          height: 62,
+                                        child: Flexible(
+                                          child: Text(
+                                            servicesnameright[index],
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 ],
                               ),
