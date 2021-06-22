@@ -45,14 +45,14 @@ class _RegisterState extends State<Register> {
                         RichText(
                           text: TextSpan(children: <TextSpan>[
                             TextSpan(
-                                text: "Go",
+                                text: "CAR",
                                 style: TextStyle(
                                     color: Colors.purple[400],
                                     fontWeight: FontWeight.bold,
                                     fontSize: 50,
                                     fontFamily: 'Bebas')),
                             TextSpan(
-                                text: "Wallpaper",
+                                text: "OSAK",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 50,
