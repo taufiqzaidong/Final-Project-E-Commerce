@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gowallpaper/screens/shopview.dart';
 import 'package:gradient_text/gradient_text.dart';
 
 class ServicePage extends StatefulWidget {
@@ -75,7 +76,7 @@ class _ServicePageState extends State<ServicePage> {
       backgroundColor: Color(0xFFCBC3E3),
       appBar: AppBar(
         backgroundColor: Color(0xFF5C0B68),
-        elevation: 0,
+        elevation: 1,
         centerTitle: true,
         title: Text("SERVICES",
             style: TextStyle(
@@ -262,21 +263,35 @@ class _ServicePageState extends State<ServicePage> {
                                 children: <Widget>[
                                   Column(
                                     children: <Widget>[
-                                      Container(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width -
-                                                  41) /
-                                              2,
-                                          height: 130,
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                            image: AssetImage(
-                                                servicesleft[index]),
-                                            fit: BoxFit.fill,
-                                            alignment: Alignment.topCenter,
-                                          )),
-                                          child: Text('')),
+                                      InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ShopView(
+                                                        text: servicesnameleft[
+                                                            index],
+                                                        imgUrl:
+                                                            servicesleft[index],index: index
+                                                      )));
+                                        },
+                                        child: Container(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width -
+                                                    41) /
+                                                2,
+                                            height: 130,
+                                            decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                              image: AssetImage(
+                                                  servicesleft[index]),
+                                              fit: BoxFit.fill,
+                                              alignment: Alignment.topCenter,
+                                            )),
+                                            child: Text('')),
+                                      ),
                                       Container(
                                         width:
                                             (MediaQuery.of(context).size.width -
@@ -329,82 +344,95 @@ class _ServicePageState extends State<ServicePage> {
                               ),
                             ),
                           ),
-                          Container(
-                            width: (MediaQuery.of(context).size.width - 25) / 2,
-                            height: 230,
-                            color: Colors.transparent,
-                            child: Card(
-                              elevation: 5,
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Column(
-                                    children: <Widget>[
-                                      Container(
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ShopView(
+                                            text: servicesnameright[index],
+                                            imgUrl: servicesright[index],
+                                          )));
+                            },
+                            child: Container(
+                              width:
+                                  (MediaQuery.of(context).size.width - 25) / 2,
+                              height: 230,
+                              color: Colors.transparent,
+                              child: Card(
+                                elevation: 5,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Column(
+                                      children: <Widget>[
+                                        Container(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width -
+                                                    41) /
+                                                2,
+                                            height: 130,
+                                            decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                              image: AssetImage(
+                                                  servicesright[index]),
+                                              fit: BoxFit.fill,
+                                              alignment: Alignment.topCenter,
+                                            )),
+                                            child: Text('')),
+                                        Container(
                                           width: (MediaQuery.of(context)
                                                       .size
                                                       .width -
                                                   41) /
                                               2,
-                                          height: 130,
-                                          decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                            image: AssetImage(
-                                                servicesright[index]),
-                                            fit: BoxFit.fill,
-                                            alignment: Alignment.topCenter,
-                                          )),
-                                          child: Text('')),
-                                      Container(
-                                        width:
-                                            (MediaQuery.of(context).size.width -
-                                                    41) /
-                                                2,
-                                        height: 92,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: <Widget>[
-                                            Center(
-                                              child: Text(
-                                                servicesnameright[index],
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    color: Colors.black,
+                                          height: 92,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: <Widget>[
+                                              Center(
+                                                child: Text(
+                                                  servicesnameright[index],
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 15,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ),
+                                              SizedBox(height: 10),
+                                              Center(
+                                                child: Text(
+                                                  locationright[index],
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color: Colors.blue,
                                                     fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ),
-                                            SizedBox(height: 10),
-                                            Center(
-                                              child: Text(
-                                                locationright[index],
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  color: Colors.blue,
-                                                  fontSize: 15,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                            SizedBox(height: 5),
-                                            Center(
-                                              child: Text(
-                                                distanceright[index],
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 12,
+                                              SizedBox(height: 5),
+                                              Center(
+                                                child: Text(
+                                                  distanceright[index],
+                                                  textAlign: TextAlign.center,
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                  ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ],
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gowallpaper/screens/Service.dart';
 import 'package:gowallpaper/screens/home.dart';
 import 'package:gowallpaper/screens/towing.dart';
@@ -89,7 +90,15 @@ class _SelectPageState extends State<SelectPage> {
                       textAlign: TextAlign.center);
                 }
 
-                return Text("loading");
+                return Container(
+      color: Colors.transparent,
+      child: Center(
+        child: SpinKitChasingDots(
+          color:  Color(0xffFFD119),
+          size: 50,
+        ),
+      ),
+    );
               },
             ),
             SizedBox(height: 20),
