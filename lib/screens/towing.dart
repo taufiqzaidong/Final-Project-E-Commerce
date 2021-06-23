@@ -40,41 +40,42 @@ class _TowingState extends State<Towing> {
                 textAlign: TextAlign.center),
             Image.asset(
               "assets/towing.gif",
-              fit: BoxFit.cover,
-              width: double.infinity,
+              fit: BoxFit.fill,
+              width: MediaQuery.of(context).size.width-50,
             ),
             SizedBox(
               height: 35,
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 100,
-            ),
-            ButtonTheme(
-              minWidth: MediaQuery.of(context).size.width / 1.1,
-              height: MediaQuery.of(context).size.height / 13,
-              child: RaisedButton.icon(
-                icon: Icon(Icons.location_city),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Colors.purple[700],
-                textColor: Colors.white,
-                label: Text('Get Your Current Location'),
-                onPressed: () {
-                  _getCurrentLocation();
-                },
-              ),
             ),
             Column(
               children: <Widget>[
                 if (_currentPosition != null)
                   Text(
-                    _currentAddress,
+                    'Your Current Location is:\n'+_currentAddress,
                     style: TextStyle(
-                        color: Colors.black, fontSize: 35, fontFamily: 'Bebas'),
+                        color: Colors.black, fontSize: 20, fontFamily: 'Bebas'),
                     textAlign: TextAlign.center,
                   ),
               ],
             ),
+            SizedBox(height: 20),
+            Center(
+              child: ButtonTheme(
+                minWidth: MediaQuery.of(context).size.width / 1.1,
+                height: MediaQuery.of(context).size.height / 13,
+                child: RaisedButton.icon(
+                  icon: Icon(Icons.location_on),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  color: Colors.purple[700],
+                  textColor: Colors.white,
+                  label: Text('Get Your Current Location'),
+                  onPressed: () {
+                    _getCurrentLocation();
+                  },
+                ),
+              ),
+            ),
+            
             SizedBox(
               height: MediaQuery.of(context).size.height / 100,
             ),
@@ -82,12 +83,12 @@ class _TowingState extends State<Towing> {
               minWidth: MediaQuery.of(context).size.width / 1.1,
               height: MediaQuery.of(context).size.height / 13,
               child: RaisedButton.icon(
-                icon: Icon(Icons.help),
+                icon: Icon(Icons.help_center),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 color: Colors.purple[700],
                 textColor: Colors.white,
-                label: Text('Request Help'),
+                label: Text('Towing Near Me'),
                 onPressed: () {},
               ),
             ),

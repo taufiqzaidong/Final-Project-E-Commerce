@@ -98,13 +98,11 @@ class _ServicePageState extends State<ServicePage> {
                   ),
                   Row(
                     children: <Widget>[
-                      GradientText("PROMOTION",
-                          gradient: LinearGradient(colors: [
-                            Color(0xFF2508FF),
-                            Color(0xFFFF1000),
-                          ]),
+                      Text("PROMOTION",
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF5C0B68)),
                           textAlign: TextAlign.center),
                     ],
                   ),
@@ -207,29 +205,26 @@ class _ServicePageState extends State<ServicePage> {
                           height: 2.5,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(colors: <Color>[
-                              Color(0xFFFF1000),
-                              Color(0xFF2508FF)
+                              Color(0xFFFFD119),
+                              Color(0xFF5C0B68)
                             ]),
                           ),
                         ),
                       ),
                       SizedBox(height: 50),
-                      GradientText("Nearby Workshop  ",
-                          gradient: LinearGradient(colors: [
-                            Color(0xFFFF1000),
-                            Color(0xFF2508FF),
-                            Color(0xFFFF1000),
-                          ]),
+                      Text("Nearby Workshop  ",
                           style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.normal),
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF5C0B68)),
                           textAlign: TextAlign.center),
                       Expanded(
                         child: Container(
                           height: 2.5,
                           decoration: BoxDecoration(
                             gradient: LinearGradient(colors: <Color>[
-                              Color(0xFF2508FF),
-                              Color(0xFFFF1000)
+                              Color(0xFF5C0B68),
+                              Color(0xFFFFD119)   
                             ]),
                           ),
                         ),
