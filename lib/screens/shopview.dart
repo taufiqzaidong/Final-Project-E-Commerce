@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gowallpaper/screens/requestservice.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 final List<String> address = [
@@ -48,7 +49,7 @@ class ShopView extends StatelessWidget {
                   height: (MediaQuery.of(context).size.height) / 2,
                   width: (MediaQuery.of(context).size.width - 25),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10),
                       color: Color(0xFF5C0B68),
                       image: DecorationImage(
                           image: AssetImage(imgUrl), fit: BoxFit.contain)),
@@ -97,13 +98,18 @@ class ShopView extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   color: Color(0xFF9000FE)),
               height: 50,
-              width: MediaQuery.of(context).size.width -25,
+              width: MediaQuery.of(context).size.width - 25,
               child: RaisedButton(
                 elevation: 0,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RequestService()));
+                },
                 color: Colors.transparent,
                 child: Text(
-                  "Reques for A Car Service",
+                  "Request for A Car Service",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,

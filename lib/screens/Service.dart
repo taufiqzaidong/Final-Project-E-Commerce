@@ -270,11 +270,12 @@ class _ServicePageState extends State<ServicePage> {
                                               MaterialPageRoute(
                                                   builder: (context) =>
                                                       ShopView(
-                                                        text: servicesnameleft[
-                                                            index],
-                                                        imgUrl:
-                                                            servicesleft[index],index: index
-                                                      )));
+                                                          text:
+                                                              servicesnameleft[
+                                                                  index],
+                                                          imgUrl: servicesleft[
+                                                              index],
+                                                          index: index)));
                                         },
                                         child: Container(
                                             width: (MediaQuery.of(context)
@@ -350,9 +351,9 @@ class _ServicePageState extends State<ServicePage> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => ShopView(
-                                            text: servicesnameright[index],
-                                            imgUrl: servicesright[index],index: index+3
-                                          )));
+                                          text: servicesnameright[index],
+                                          imgUrl: servicesright[index],
+                                          index: index + 3)));
                             },
                             child: Container(
                               width:
