@@ -92,27 +92,7 @@ class _ProfileState extends State<Profile> {
                 },
               ),
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 100,
-            ),
-            ButtonTheme(
-              minWidth: MediaQuery.of(context).size.width / 1.1,
-              height: MediaQuery.of(context).size.height / 13,
-              child: RaisedButton.icon(
-                icon: Icon(Icons.location_city),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-                color: Colors.purple[400],
-                textColor: Colors.white,
-                label: Text('Location'),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Location()),
-                  );
-                },
-              ),
-            ),
+           
             SizedBox(
               height: MediaQuery.of(context).size.height / 100,
             ),
@@ -149,6 +129,27 @@ class _ProfileState extends State<Profile> {
                 label: Text('Log Out'),
                 onPressed: () async {
                   await _auth.signOut();
+                },
+              ),
+            ),
+             SizedBox(
+              height: MediaQuery.of(context).size.height / 100,
+            ),
+            ButtonTheme(
+              minWidth: MediaQuery.of(context).size.width / 1.1,
+              height: MediaQuery.of(context).size.height / 13,
+              child: RaisedButton.icon(
+                icon: Icon(Icons.location_city),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                color: Colors.purple[400],
+                textColor: Colors.white,
+                label: Text('Register Workshop'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Location()),
+                  );
                 },
               ),
             ),
