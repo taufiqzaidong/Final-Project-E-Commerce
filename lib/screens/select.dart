@@ -3,10 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gowallpaper/screens/Service.dart';
+import 'package:gowallpaper/screens/assistance.dart';
 import 'package:gowallpaper/screens/home.dart';
 import 'package:gowallpaper/screens/profile.dart';
 import 'package:gowallpaper/screens/towing.dart';
 import 'package:gowallpaper/services/auth.dart';
+import 'package:gowallpaper/screens/assistance.dart';
 //import 'package:youtube/Service.dart';
 //import 'package:youtube/info.dart';
 
@@ -93,14 +95,14 @@ class _SelectPageState extends State<SelectPage> {
                 }
 
                 return Container(
-      color: Colors.transparent,
-      child: Center(
-        child: SpinKitChasingDots(
-          color:  Color(0xffFFD119),
-          size: 50,
-        ),
-      ),
-    );
+                  color: Colors.transparent,
+                  child: Center(
+                    child: SpinKitChasingDots(
+                      color: Color(0xffFFD119),
+                      size: 50,
+                    ),
+                  ),
+                );
               },
             ),
             SizedBox(height: 20),
@@ -120,8 +122,10 @@ class _SelectPageState extends State<SelectPage> {
                   children: <Widget>[
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Home()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Assistance()));
                       },
                       child: Container(
                         decoration: BoxDecoration(
