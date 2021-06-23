@@ -22,7 +22,7 @@ class _TowingState extends State<Towing> {
         backgroundColor: Color(0xFF5C0B68),
         elevation: 0,
         centerTitle: true,
-        title: Text("Towing Service",
+        title: Text("TOWING",
             style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,

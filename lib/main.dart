@@ -105,7 +105,7 @@ class MyPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(23.0),
                     color: Color(0xFFFFD119)),
                 height: 50,
-                width: MediaQuery.of(context).size.width,
+                width: (MediaQuery.of(context).size.width)-5,
                 child: RaisedButton(
                   elevation: 0,
                   onPressed: () {

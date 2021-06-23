@@ -49,7 +49,7 @@ final List<String> servicesnameright = [
 ];
 final List<String> locationright = [
   "Sri Serdang, Selangor",
-  "Putrajaya",
+  "Seri Kembangan, Selangor",
   "Bangi, Selangor",
 ];
 final List<String> distanceright = [
@@ -351,7 +351,7 @@ class _ServicePageState extends State<ServicePage> {
                                   MaterialPageRoute(
                                       builder: (context) => ShopView(
                                             text: servicesnameright[index],
-                                            imgUrl: servicesright[index],
+                                            imgUrl: servicesright[index],index: index+3
                                           )));
                             },
                             child: Container(
