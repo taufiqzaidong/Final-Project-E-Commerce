@@ -85,274 +85,170 @@ class _ServicePageState extends State<ServicePage> {
                 color: Color(0xFFFFD119)),
             textAlign: TextAlign.center),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Text("PROMOTION",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF5C0B68)),
-                          textAlign: TextAlign.center),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.25,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: imagesrc.length,
-                      itemBuilder: (context, index) {
-                        return Stack(
-                          children: <Widget>[
-                            Container(
-                              width: MediaQuery.of(context).size.width - 40,
-                              child: Card(
-                                color: Colors.transparent,
-                                elevation: 0,
-                                child: Container(
-                                  child: Center(
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                      child: Image.asset(
-                                        imagesrc[index],
-                                        fit: BoxFit.fill,
-                                        width: double.infinity,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Text("PROMOTION",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF5C0B68)),
+                            textAlign: TextAlign.center),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.25,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: imagesrc.length,
+                        itemBuilder: (context, index) {
+                          return Stack(
+                            children: <Widget>[
+                              Container(
+                                width: MediaQuery.of(context).size.width - 40,
+                                child: Card(
+                                  color: Colors.transparent,
+                                  elevation: 0,
+                                  child: Container(
+                                    child: Center(
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(5.0),
+                                        child: Image.asset(
+                                          imagesrc[index],
+                                          fit: BoxFit.fill,
+                                          width: double.infinity,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    offersvalue[index],
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.red,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 3,
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    offers[index],
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.red,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 3,
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color: Colors.white,
-                                  ),
-                                  child: Text(
-                                    offercodes[index],
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                              ],
-                            ),
-                          ],
-                        );
-                      },
-                    ),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Container(
-                          height: 2.5,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: <Color>[
-                              Color(0xFFFFD119),
-                              Color(0xFF5C0B68)
-                            ]),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 50),
-                      Text("Nearby Workshop  ",
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF5C0B68)),
-                          textAlign: TextAlign.center),
-                      Expanded(
-                        child: Container(
-                          height: 2.5,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: <Color>[
-                              Color(0xFF5C0B68),
-                              Color(0xFFFFD119)   
-                            ]),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-//------------------------------------------------------------------------------------
-
-            SingleChildScrollView(
-              child: Container(
-                height: MediaQuery.of(context).size.height / 2,
-                child: Expanded(
-                  child: ListView.builder(
-                    itemCount: servicesleft.length,
-                    itemBuilder: (context, index) {
-                      return Row(
-                        children: <Widget>[
-                          Container(
-                            width: (MediaQuery.of(context).size.width - 25) / 2,
-                            height: 230,
-                            color: Colors.transparent,
-                            child: Card(
-                              elevation: 5,
-                              child: Row(
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Column(
-                                    children: <Widget>[
-                                      InkWell(
-                                        onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      ShopView(
-                                                          text:
-                                                              servicesnameleft[
-                                                                  index],
-                                                          imgUrl: servicesleft[
-                                                              index],
-                                                          index: index)));
-                                        },
-                                        child: Container(
-                                            width: (MediaQuery.of(context)
-                                                        .size
-                                                        .width -
-                                                    41) /
-                                                2,
-                                            height: 130,
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                              image: AssetImage(
-                                                  servicesleft[index]),
-                                              fit: BoxFit.fill,
-                                              alignment: Alignment.topCenter,
-                                            )),
-                                            child: Text('')),
-                                      ),
-                                      Container(
-                                        width:
-                                            (MediaQuery.of(context).size.width -
-                                                    41) /
-                                                2,
-                                        height: 92,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: <Widget>[
-                                            Center(
-                                              child: Text(
-                                                servicesnameleft[index],
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ),
-                                            SizedBox(height: 10),
-                                            Center(
-                                              child: Text(
-                                                locationleft[index],
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  color: Colors.blue,
-                                                  fontSize: 15,
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(height: 5),
-                                            Center(
-                                              child: Text(
-                                                distanceleft[index],
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 12,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                    ],
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: Colors.white,
+                                    ),
+                                    child: Text(
+                                      offersvalue[index],
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: Colors.white,
+                                    ),
+                                    child: Text(
+                                      offers[index],
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.red,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: Colors.white,
+                                    ),
+                                    child: Text(
+                                      offercodes[index],
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
                                   ),
                                 ],
                               ),
+                            ],
+                          );
+                        },
+                      ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Container(
+                            height: 2.5,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: <Color>[
+                                Color(0xFFFFD119),
+                                Color(0xFF5C0B68)
+                              ]),
                             ),
                           ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ShopView(
-                                          text: servicesnameright[index],
-                                          imgUrl: servicesright[index],
-                                          index: index + 3)));
-                            },
-                            child: Container(
-                              width:
-                                  (MediaQuery.of(context).size.width - 25) / 2,
+                        ),
+                        SizedBox(height: 50),
+                        Text("Nearby Workshop  ",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF5C0B68)),
+                            textAlign: TextAlign.center),
+                        Expanded(
+                          child: Container(
+                            height: 2.5,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(colors: <Color>[
+                                Color(0xFF5C0B68),
+                                Color(0xFFFFD119)   
+                              ]),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+      
+      //------------------------------------------------------------------------------------
+      
+              SingleChildScrollView(
+                child: Container(
+                  height: MediaQuery.of(context).size.height / 2,
+                  child: Expanded(
+                    child: ListView.builder(
+                      itemCount: servicesleft.length,
+                      itemBuilder: (context, index) {
+                        return Row(
+                          children: <Widget>[
+                            Container(
+                              width: (MediaQuery.of(context).size.width - 25) / 2,
                               height: 230,
                               color: Colors.transparent,
                               child: Card(
@@ -363,27 +259,41 @@ class _ServicePageState extends State<ServicePage> {
                                   children: <Widget>[
                                     Column(
                                       children: <Widget>[
+                                        InkWell(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ShopView(
+                                                            text:
+                                                                servicesnameleft[
+                                                                    index],
+                                                            imgUrl: servicesleft[
+                                                                index],
+                                                            index: index)));
+                                          },
+                                          child: Container(
+                                              width: (MediaQuery.of(context)
+                                                          .size
+                                                          .width -
+                                                      41) /
+                                                  2,
+                                              height: 130,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                image: AssetImage(
+                                                    servicesleft[index]),
+                                                fit: BoxFit.fill,
+                                                alignment: Alignment.topCenter,
+                                              )),
+                                              child: Text('')),
+                                        ),
                                         Container(
-                                            width: (MediaQuery.of(context)
-                                                        .size
-                                                        .width -
-                                                    41) /
-                                                2,
-                                            height: 130,
-                                            decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                              image: AssetImage(
-                                                  servicesright[index]),
-                                              fit: BoxFit.fill,
-                                              alignment: Alignment.topCenter,
-                                            )),
-                                            child: Text('')),
-                                        Container(
-                                          width: (MediaQuery.of(context)
-                                                      .size
-                                                      .width -
-                                                  41) /
-                                              2,
+                                          width:
+                                              (MediaQuery.of(context).size.width -
+                                                      41) /
+                                                  2,
                                           height: 92,
                                           child: Column(
                                             crossAxisAlignment:
@@ -391,7 +301,7 @@ class _ServicePageState extends State<ServicePage> {
                                             children: <Widget>[
                                               Center(
                                                 child: Text(
-                                                  servicesnameright[index],
+                                                  servicesnameleft[index],
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                       color: Colors.black,
@@ -403,7 +313,7 @@ class _ServicePageState extends State<ServicePage> {
                                               SizedBox(height: 10),
                                               Center(
                                                 child: Text(
-                                                  locationright[index],
+                                                  locationleft[index],
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                     color: Colors.blue,
@@ -414,7 +324,7 @@ class _ServicePageState extends State<ServicePage> {
                                               SizedBox(height: 5),
                                               Center(
                                                 child: Text(
-                                                  distanceright[index],
+                                                  distanceleft[index],
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                     color: Colors.black,
@@ -431,16 +341,108 @@ class _ServicePageState extends State<ServicePage> {
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      );
-                    },
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ShopView(
+                                            text: servicesnameright[index],
+                                            imgUrl: servicesright[index],
+                                            index: index + 3)));
+                              },
+                              child: Container(
+                                width:
+                                    (MediaQuery.of(context).size.width - 25) / 2,
+                                height: 230,
+                                color: Colors.transparent,
+                                child: Card(
+                                  elevation: 5,
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Column(
+                                        children: <Widget>[
+                                          Container(
+                                              width: (MediaQuery.of(context)
+                                                          .size
+                                                          .width -
+                                                      41) /
+                                                  2,
+                                              height: 130,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                image: AssetImage(
+                                                    servicesright[index]),
+                                                fit: BoxFit.fill,
+                                                alignment: Alignment.topCenter,
+                                              )),
+                                              child: Text('')),
+                                          Container(
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width -
+                                                    41) /
+                                                2,
+                                            height: 92,
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: <Widget>[
+                                                Center(
+                                                  child: Text(
+                                                    servicesnameright[index],
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                        color: Colors.black,
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                ),
+                                                SizedBox(height: 10),
+                                                Center(
+                                                  child: Text(
+                                                    locationright[index],
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      color: Colors.blue,
+                                                      fontSize: 15,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(height: 5),
+                                                Center(
+                                                  child: Text(
+                                                    distanceright[index],
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 12,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
                   ),
                 ),
               ),
-            ),
-//------------------------------------------------------------------------------------
-          ],
+      //------------------------------------------------------------------------------------
+            ],
+          ),
         ),
       ),
     );

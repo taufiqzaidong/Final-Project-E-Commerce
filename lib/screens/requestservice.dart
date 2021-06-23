@@ -120,7 +120,7 @@ class RequestService extends StatelessWidget {
                           SizedBox(height: 10),
                           Center(
                             child: Text(
-                              'RM 50',
+                              'RM 100',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.blue,

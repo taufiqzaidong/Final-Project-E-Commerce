@@ -11,6 +11,8 @@ class Register extends StatefulWidget {
   _RegisterState createState() => _RegisterState();
 }
 
+enum SingingCharacter { lafayette, jefferson }
+
 class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
@@ -22,6 +24,8 @@ class _RegisterState extends State<Register> {
   String password = '';
   String error = '';
 
+  SingingCharacter _character = SingingCharacter.lafayette;
+
   @override
   Widget build(BuildContext context) {
     FlutterStatusbarcolor.setStatusBarColor(Colors.transparent);
@@ -32,9 +36,6 @@ class _RegisterState extends State<Register> {
             backgroundColor: Color(0xFF5C0B68),
             body: Container(
                 height: double.infinity,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(''), fit: BoxFit.cover)),
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
                 child: Form(
                   key: _formKey,
@@ -93,6 +94,37 @@ class _RegisterState extends State<Register> {
                           },
                         ),
                         SizedBox(height: 20),
+                        Column(
+                            children: <Widget>[
+                              Center(
+                                child: RadioListTile<SingingCharacter>(
+                                  title: const Text('Car Owner',
+                                      style: TextStyle(color: Colors.white)),
+                                  value: SingingCharacter.lafayette,
+                                  groupValue: _character,
+                                  onChanged: (SingingCharacter value) {
+                                    setState(() {
+                                      _character = value;
+                                    });
+                                  },
+                                ),
+                              ),
+                              Center(
+                                child: RadioListTile<SingingCharacter>(
+                                  title: const Text('Workshop Owner',
+                                      style: TextStyle(color: Colors.white)),
+                                  value: SingingCharacter.jefferson,
+                                  groupValue: _character,
+                                  onChanged: (SingingCharacter value) {
+                                    setState(() {
+                                      _character = value;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        
                         RaisedButton(
                           color: Colors.purple[400],
                           child: Text(
