@@ -17,7 +17,7 @@ class _TowingState extends State<Towing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFCBC3E3),
+      backgroundColor: Color(0xFFEDE7F6),
       appBar: AppBar(
         backgroundColor: Color(0xFF5C0B68),
         elevation: 0,
@@ -56,12 +56,39 @@ class _TowingState extends State<Towing> {
                 icon: Icon(Icons.location_city),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                color: Colors.purple[400],
+                color: Colors.purple[700],
                 textColor: Colors.white,
                 label: Text('Get Your Current Location'),
                 onPressed: () {
                   _getCurrentLocation();
                 },
+              ),
+            ),
+            Column(
+              children: <Widget>[
+                if (_currentPosition != null)
+                  Text(
+                    _currentAddress,
+                    style: TextStyle(
+                        color: Colors.black, fontSize: 40, fontFamily: 'Bebas'),
+                    textAlign: TextAlign.center,
+                  ),
+              ],
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 100,
+            ),
+            ButtonTheme(
+              minWidth: MediaQuery.of(context).size.width / 1.1,
+              height: MediaQuery.of(context).size.height / 13,
+              child: RaisedButton.icon(
+                icon: Icon(Icons.help),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                color: Colors.purple[700],
+                textColor: Colors.white,
+                label: Text('Request Help'),
+                onPressed: () {},
               ),
             ),
           ],
