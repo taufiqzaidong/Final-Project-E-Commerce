@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gowallpaper/screens/home.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:gowallpaper/screens/wallet.dart';
 import 'package:provider/provider.dart';
 
 class Towing extends StatefulWidget {
@@ -88,8 +89,11 @@ class _TowingState extends State<Towing> {
                     borderRadius: BorderRadius.circular(20)),
                 color: Colors.purple[700],
                 textColor: Colors.white,
-                label: Text('Towing Near Me'),
-                onPressed: () {},
+                label: Text('Request Help'),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Wallet()));
+                },
               ),
             ),
           ],
