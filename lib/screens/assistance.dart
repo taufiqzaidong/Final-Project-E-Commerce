@@ -36,7 +36,7 @@ class _AssistanceState extends State<Assistance> {
       ),
       body: Stack(
         children: <Widget>[
-          _buildGoogleMap(context),
+          Image.asset("assets/maps.jpg"),
           _zoomminusfunction(),
           _zoomplusfunction(),
           _buildContainer(),
@@ -97,25 +97,25 @@ class _AssistanceState extends State<Assistance> {
                   "https://www.carkaki.my/wp-content/uploads/job-manager-uploads/featured_image/2017/06/Bengkel-Kereta-ACS-Kg-Baru.jpg",
                   40.738380,
                   -73.988426,
-                  "Gramercy Tavern"),
+                  "Bengkel Acs"),
             ),
             SizedBox(width: 10.0),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: _boxes(
-                  "https://lh5.googleusercontent.com/p/AF1QipMKRN-1zTYMUVPrH-CcKzfTo6Nai7wdL7D8PMkt=w340-h160-k-no",
+                  "https://www.sekaki.my/oc-content/uploads/365/43554.jpg",
                   40.761421,
                   -73.981667,
-                  "Le Bernardin"),
+                  "JF Ultra Garage"),
             ),
             SizedBox(width: 10.0),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: _boxes(
-                  "https://images.unsplash.com/photo-1504940892017-d23b9053d5d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+                  "https://cdn1.npcdn.net/image/15204175350fcbe13c412e5852076fc1e6debad344.jpg?md5id=05d9badacfacac78a47cc067c4e90353&new_width=1000&new_height=1000&w=1522058255",
                   40.732128,
                   -73.999619,
-                  "Blue Hill"),
+                  "TypeSgarage"),
             ),
           ],
         ),
@@ -154,6 +154,26 @@ class _AssistanceState extends State<Assistance> {
                       padding: const EdgeInsets.all(8.0),
                       child: myDetailsContainer1(restaurantName),
                     ),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      RaisedButton(
+                        color: Colors.purple[400],
+                        child: Text(
+                          'Direction',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {},
+                      ),
+                      RaisedButton(
+                        color: Colors.purple[400],
+                        child: Text(
+                          'Help',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
                   ),
                 ],
               )),
@@ -238,7 +258,7 @@ class _AssistanceState extends State<Assistance> {
         SizedBox(height: 5.0),
         Container(
             child: Text(
-          "American \u00B7 \u0024\u0024 \u00B7 1.6 mi",
+          "Kuala Lumpur \u00B7 1.6 mi",
           style: TextStyle(
             color: Colors.black54,
             fontSize: 18.0,
@@ -247,7 +267,7 @@ class _AssistanceState extends State<Assistance> {
         SizedBox(height: 5.0),
         Container(
             child: Text(
-          "Closed \u00B7 Opens 17:00 Thu",
+          "Open 08:00 a.m \u00B7 Close 5:00 p.m ",
           style: TextStyle(
               color: Colors.black54,
               fontSize: 18.0,
