@@ -17,7 +17,7 @@ class _TowingState extends State<Towing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEDE7F6),
+      backgroundColor: Color(0xFFCBC3E3),
       appBar: AppBar(
         backgroundColor: Color(0xFF5C0B68),
         elevation: 0,
@@ -70,7 +70,7 @@ class _TowingState extends State<Towing> {
                   Text(
                     _currentAddress,
                     style: TextStyle(
-                        color: Colors.black, fontSize: 40, fontFamily: 'Bebas'),
+                        color: Colors.black, fontSize: 35, fontFamily: 'Bebas'),
                     textAlign: TextAlign.center,
                   ),
               ],
