@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gowallpaper/screens/Service.dart';
 import 'package:gowallpaper/screens/home.dart';
+import 'package:gowallpaper/screens/profile.dart';
 import 'package:gowallpaper/screens/towing.dart';
 import 'package:gowallpaper/services/auth.dart';
 //import 'package:youtube/Service.dart';
@@ -37,11 +38,12 @@ class _SelectPageState extends State<SelectPage> {
           TextButton.icon(
             icon: Icon(Icons.person, color: Color(0xFF5C0B68)),
             label: Text(
-              'Logout',
+              'Profile',
               style: TextStyle(color: Color(0xFF5C0B68)),
             ),
-            onPressed: () async {
-              await _auth.signOut();
+            onPressed: () {
+              Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Profile()));
             },
           ),
         ],
