@@ -104,7 +104,7 @@ class _ProfileState extends State<Profile> {
                     borderRadius: BorderRadius.circular(20)),
                 color: Colors.purple[400],
                 textColor: Colors.white,
-                label: Text('Location'),
+                label: Text('Register Workshop'),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -152,6 +152,7 @@ class _ProfileState extends State<Profile> {
                 },
               ),
             ),
+            
           ],
         ),
       ),
