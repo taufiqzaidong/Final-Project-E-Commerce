@@ -13,7 +13,7 @@ class _WalletState extends State<Wallet> {
         appBar: AppBar(
           elevation: 0,
           centerTitle: true,
-          title: titleAppBar('Your', 'Wallet'),
+          title: titleAppBar('Care', 'Line'),
           backgroundColor: Colors.transparent,
           leading: IconButton(
             icon: Icon(
@@ -30,28 +30,41 @@ class _WalletState extends State<Wallet> {
                 SizedBox(height: 20),
                 Center(
                   child: Text(
-                    "Balance of Your Account:",
-                    style: TextStyle(fontSize: 25, color: Colors.grey),
+                    "Your Request Has Been Sent To The Nearest Towing Company",
+                    style: TextStyle(fontSize: 25, color: Colors.grey[600]),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Center(
+                  child: Text(
+                    "We will call you in 5 minutes!!",
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 20),
+                Center(
+                  child: Text(
+                    "Your number: 012-234xx56",
+                    style: TextStyle(fontSize: 15, color: Colors.black),
                     textAlign: TextAlign.center,
                   ),
                 ),
                 SizedBox(
-                  height: 80,
+                  height: 40,
                 ),
                 Center(
-                  child: Text(
-                    "RM 20.00",
-                    style: TextStyle(fontSize: 45, color: Colors.black),
-                  ),
+                  child: Image.asset('assets/tow.jpg'),
                 ),
                 SizedBox(
-                  height: 100,
+                  height: 40,
                   width: 60,
                 ),
                 RaisedButton(
                   textColor: Colors.white,
                   color: Colors.purple[400],
-                  child: Text('Withdraw'),
+                  child: Text('Resend the Request'),
                   onPressed: () {},
                 )
               ],
