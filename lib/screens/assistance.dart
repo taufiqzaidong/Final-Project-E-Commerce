@@ -27,7 +27,7 @@ class _AssistanceState extends State<Assistance> {
         backgroundColor: Color(0xFF5C0B68),
         elevation: 0,
         centerTitle: true,
-        title: Text("TOWING",
+        title: Text("ASSISTANCE",
             style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -94,7 +94,7 @@ class _AssistanceState extends State<Assistance> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: _boxes(
-                  "https://lh5.googleusercontent.com/p/AF1QipO3VPL9m-b355xWeg4MXmOQTauFAEkavSluTtJU=w225-h160-k-no",
+                  "https://www.carkaki.my/wp-content/uploads/job-manager-uploads/featured_image/2017/06/Bengkel-Kereta-ACS-Kg-Baru.jpg",
                   40.738380,
                   -73.988426,
                   "Gramercy Tavern"),
