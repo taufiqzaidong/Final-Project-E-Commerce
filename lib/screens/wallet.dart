@@ -52,13 +52,28 @@ class _WalletState extends State<Wallet> {
                   ),
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 Center(
                   child: Image.asset('assets/tow.jpg'),
                 ),
+                SizedBox(height: 20),
+                Center(
+                  child: Text(
+                    "SJ SMART SERVICES, LOT 10 TAMAN IMPIAN, SERI KEMBANGAN, 43400 SERDANG SELANGOR ",
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                Center(
+                  child: Text(
+                    "013-9879894 ",
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 SizedBox(
-                  height: 40,
+                  height: 20,
                   width: 60,
                 ),
                 RaisedButton(
