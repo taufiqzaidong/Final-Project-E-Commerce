@@ -21,16 +21,13 @@ class _SelectPageState extends State<SelectPage> {
   final usersRef = FirebaseFirestore.instance.collection('Users');
   final FirebaseAuth auth = FirebaseAuth.instance;
   String uid = '';
-  @override
-  void initState() {
-    final User user = auth.currentUser;
-    uid = user.uid;
-    super.initState();
-  }
+  
+  
 
   @override
   Widget build(BuildContext context) {
-    final AuthService _auth = AuthService();
+    final User user = auth.currentUser;
+    uid = user.uid;
     return Scaffold(
       backgroundColor: Color(0xFFCBC3E3),
       appBar: AppBar(
@@ -44,8 +41,8 @@ class _SelectPageState extends State<SelectPage> {
               style: TextStyle(color: Color(0xFF5C0B68)),
             ),
             onPressed: () {
-              Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Profile()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Profile()));
             },
           ),
         ],

@@ -107,7 +107,7 @@ class _ProfileState extends State<Profile> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 100,
                 ),
-                ButtonTheme(
+                /*ButtonTheme(
                   minWidth: MediaQuery.of(context).size.width / 1.1,
                   height: MediaQuery.of(context).size.height / 13,
                   child: RaisedButton.icon(
@@ -124,7 +124,7 @@ class _ProfileState extends State<Profile> {
                       );
                     },
                   ),
-                ),
+                ),*/
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 100,
                 ),
@@ -141,6 +141,7 @@ class _ProfileState extends State<Profile> {
                     onPressed: () async {
                       await _auth.signOut();
                       Navigator.pop(context);
+                      
                     },
                   ),
                 ),

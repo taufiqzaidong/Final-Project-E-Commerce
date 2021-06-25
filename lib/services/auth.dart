@@ -30,12 +30,12 @@ class AuthService {
 
   //register with email & password
   Future registerWithEmailAndPassword(
-      String email, String password, String userName) async {
+      String email, String password, String userName,int userType) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User userFirebase = result.user;
-      await userSetup(userName, email);
+      await userSetup(userName, email,userType);
       return _userFromFirebaseUser(userFirebase);
     } catch (e) {
       print(e.toString());
@@ -46,6 +46,7 @@ class AuthService {
   //sign out
   Future signOut() async {
     try {
+      _userFromFirebaseUser(null);
       return await _auth.signOut();
     } catch (e) {
       print(e.toString());

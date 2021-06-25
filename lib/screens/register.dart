@@ -1,3 +1,4 @@
+import 'package:gowallpaper/models/user.dart';
 import 'package:gowallpaper/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:gowallpaper/services/auth.dart';
@@ -17,6 +18,7 @@ class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
+  int _groupValue = 0;
 
   //text field state
   String userName = '';
@@ -24,7 +26,15 @@ class _RegisterState extends State<Register> {
   String password = '';
   String error = '';
 
-  SingingCharacter _character = SingingCharacter.lafayette;
+  Widget _myRadioButton({String title, int value, Function onChanged}) {
+    return RadioListTile(
+    activeColor: Colors.white,
+      value: value,
+      groupValue: _groupValue,
+      onChanged: onChanged,
+      title: Text(title,style: TextStyle(color: Colors.white),),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,36 +105,21 @@ class _RegisterState extends State<Register> {
                         ),
                         SizedBox(height: 20),
                         Column(
-                            children: <Widget>[
-                              Center(
-                                child: RadioListTile<SingingCharacter>(
-                                  title: const Text('Car Owner',
-                                      style: TextStyle(color: Colors.white)),
-                                  value: SingingCharacter.lafayette,
-                                  groupValue: _character,
-                                  onChanged: (SingingCharacter value) {
-                                    setState(() {
-                                      _character = value;
-                                    });
-                                  },
-                                ),
-                              ),
-                              Center(
-                                child: RadioListTile<SingingCharacter>(
-                                  title: const Text('Workshop Owner',
-                                      style: TextStyle(color: Colors.white)),
-                                  value: SingingCharacter.jefferson,
-                                  groupValue: _character,
-                                  onChanged: (SingingCharacter value) {
-                                    setState(() {
-                                      _character = value;
-                                    });
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        
+                          children: <Widget>[
+                            _myRadioButton(
+                              title: "Car Owner",
+                              value: 0,
+                              onChanged: (newValue) =>
+                                  setState(() => _groupValue = newValue),
+                            ),
+                            _myRadioButton(
+                              title: "Workshop Owner",
+                              value: 1,
+                              onChanged: (newValue) =>
+                                  setState(() => _groupValue = newValue),
+                            ),
+                          ],
+                        ),
                         RaisedButton(
                           color: Colors.purple[400],
                           child: Text(
@@ -136,7 +131,7 @@ class _RegisterState extends State<Register> {
                               setState(() => loading = true);
                               dynamic result =
                                   await _auth.registerWithEmailAndPassword(
-                                      email, password, userName);
+                                      email, password, userName,_groupValue);
                               if (result == null) {
                                 setState(() {
                                   error = 'Email is not valid';

@@ -7,7 +7,7 @@ FirebaseAuth auth = FirebaseAuth.instance;
 String uid = auth.currentUser.uid.toString();
 final firestoreInstance = FirebaseFirestore.instance;
 
-Future<void> userSetup(String displayName, String email) async {
-  users.doc(uid).set({'displayName': displayName, 'email': email});
+Future<void> userSetup(String displayName, String email,int userType) async {
+  users.doc(uid).set({'displayName': displayName, 'email': email,'userType':userType});
   return;
 }
